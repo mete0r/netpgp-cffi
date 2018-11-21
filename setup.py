@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-#   METE0R-PROJECT: SOME_DESCRIPTION
+#   netpgp-cffi: netpgp cffi binding
 #   Copyright (C) 2015-2017 mete0r <mete0r@sarangbang.or.kr>
 #
 #   This program is free software: you can redistribute it and/or modify
@@ -68,7 +68,7 @@ def readfile(path):
 
 @setup_dir
 def get_version():
-    source = readfile('src/METE0R_PACKAGE/__init__.py')
+    source = readfile('src/netpgp_cffi/__init__.py')
     version_match = re.search(r'^__version__ = [\'"]([^\'"]*)[\'"]',
                               source, re.M)
     if not version_match:
@@ -98,30 +98,30 @@ tests_require = readfile('requirements/test.in')
 
 
 setup_info = {
-    'name': 'METE0R-PROJECT',
+    'name': 'netpgp-cffi',
     'version': get_version(),
-    'description': 'SOME_DESCRIPTION',
+    'description': 'netpgp cffi binding',
     'long_description': '\n'.join([readfile('README.rst'),
                                    readfile('CHANGES.rst')]),
 
     'author': 'mete0r',
     'author_email': 'mete0r@sarangbang.or.kr',
     'license': 'GNU Affero General Public License v3 or later (AGPLv3+)',
-    # 'url': 'https://github.com/mete0r/METE0R-PROJECT',
+    # 'url': 'https://github.com/mete0r/netpgp-cffi',
 
     'packages': [
-        'METE0R_PACKAGE',
-        'METE0R_PACKAGE.recipe',
+        'netpgp_cffi',
+        'netpgp_cffi.recipe',
     ],
     # do not use '.'; just omit to specify setup.py directory
     'package_dir': {
         '': 'src',
     },
     'package_data': {
-        'METE0R_PACKAGE': [
+        'netpgp_cffi': [
             'locale/*/*/*.mo',
         ],
-        # 'METE0R_PACKAGE.tests': [
+        # 'netpgp_cffi.tests': [
         #   'files/*',
         # ],
     },
@@ -133,22 +133,22 @@ setup_info = {
     },
     'setup_requires': setup_requires,
     'message_extractors': {
-        'src/METE0R_PACKAGE': [
+        'src/netpgp_cffi': [
             ('**.py', 'python', None),
         ]
     },
     'entry_points': {
         'console_scripts': [
-            'METE0R-PROJECT = METE0R_PACKAGE.cli:main',
+            'netpgp-cffi = netpgp_cffi.cli:main',
         ],
         'zc.buildout': [
-            'default = METE0R_PACKAGE.recipe:Recipe',
+            'default = netpgp_cffi.recipe:Recipe',
         ],
         'zc.buildout.uninstall': [
-            'default = METE0R_PACKAGE.recipe:uninstall',
+            'default = netpgp_cffi.recipe:uninstall',
         ],
         'paste.app_factory': [
-            'main = METE0R_PACKAGE.wsgi:app_factory',
+            'main = netpgp_cffi.wsgi:app_factory',
         ],
     },
     'classifiers': [

@@ -1,12 +1,12 @@
 [run]
 branch = True
-source = METE0R_PACKAGE
+source = netpgp_cffi
 
 [paths]
 source =
-	src/METE0R_PACKAGE
-	.tox/*/lib/python*/site-packages/METE0R_PACKAGE
-	.tox/pypy*/site-packages/METE0R_PACKAGE
+	src/netpgp_cffi
+	.tox/*/lib/python*/site-packages/netpgp_cffi
+	.tox/pypy*/site-packages/netpgp_cffi
 
 
 [html]

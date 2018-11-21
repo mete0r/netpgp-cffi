@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-#   METE0R-PROJECT: SOME_DESCRIPTION
+#   netpgp-cffi: netpgp cffi binding
 #   Copyright (C) 2015-2018 mete0r <mete0r@sarangbang.or.kr>
 #
 #   This program is free software: you can redistribute it and/or modify
@@ -26,7 +26,7 @@ from unittest import TestCase
 class WsgiAppTest(TestCase):
 
     def test_app_factory(self):
-        from METE0R_PACKAGE.wsgi import app_factory
+        from netpgp_cffi.wsgi import app_factory
         app = app_factory({}, **{})
 
         environ = {

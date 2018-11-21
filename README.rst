@@ -1,7 +1,7 @@
-METE0R-PROJECT
+netpgp-cffi
 ==============
 
-SOME_DESCRIPTION
+netpgp cffi binding
 
 
 Production environment

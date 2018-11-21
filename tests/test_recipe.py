@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-#   METE0R-PROJECT: SOME_DESCRIPTION
+#   netpgp-cffi: netpgp cffi binding
 #   Copyright (C) 2015-2018 mete0r <mete0r@sarangbang.or.kr>
 #
 #   This program is free software: you can redistribute it and/or modify
@@ -25,7 +25,7 @@ from unittest import TestCase
 class RecipeTest(TestCase):
 
     def test_install_and_update(self):
-        from METE0R_PACKAGE.recipe import Recipe
+        from netpgp_cffi.recipe import Recipe
         buildout = {}
         options = {}
         recipe = Recipe(buildout, 'foo', options)
@@ -33,6 +33,6 @@ class RecipeTest(TestCase):
         recipe.update()
 
     def test_uninstall(self):
-        from METE0R_PACKAGE.recipe import uninstall
+        from netpgp_cffi.recipe import uninstall
         options = {}
         uninstall('foo', options)

@@ -1,10 +1,10 @@
 Command-line interface
 ======================
 
-METE0R-PROJECT
+netpgp-cffi
 --------------
 
 .. argparse::
-   :module: METE0R_PACKAGE.cli
+   :module: netpgp_cffi.cli
    :func: main_argparse
-   :prog: METE0R-PROJECT
+   :prog: netpgp-cffi
