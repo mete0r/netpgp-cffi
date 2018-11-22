@@ -4,3 +4,6 @@
 #
 #    pip-compile --output-file requirements/site.txt requirements.in requirements/site.in
 #
+attr==0.3.1
+cffi==1.11.5
+pycparser==2.19           # via cffi

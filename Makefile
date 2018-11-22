@@ -65,7 +65,17 @@ VENV	:= . bin/activate &&
 
 
 .PHONY: all
-all: $(REQUIREMENTS_FILES) update-requirements
+all: $(REQUIREMENTS_FILES) update-requirements include/netpgp.h lib/libnetpgp.a lib/libmj.a
+
+include/netpgp.h lib/libnetpgp.a lib/libmj.a: build/netpgp/Makefile
+	make -C build/netpgp install
+build/netpgp/Makefile: src/netpgp/configure
+	rm -rf build/netpgp
+	mkdir -p build/netpgp
+	cd build/netpgp && $$(realpath ../../src/netpgp/configure) --prefix=$$(realpath ../..) --with-pic
+src/netpgp/configure:
+	git submodule init
+	git submodule update
 
 .PHONY: update-requirements
 update-requirements: .pip-sync
@@ -108,7 +118,11 @@ notebook:
 
 .PHONY: test
 test: requirements/test.txt
+	$(VENV) coverage erase
 	$(VENV) detox -e py27,py34,pypy
+
+.PHONY: test-report
+test-report:
 	$(VENV) coverage combine
 	$(VENV) coverage report
 	$(VENV) coverage html

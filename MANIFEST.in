@@ -3,10 +3,12 @@ include CHANGES.rst
 include Makefile
 include README.rst
 include .coveragerc
+include .gitmodules
 include *.py
 include bootstrap-virtualenv.in
 include bootstrap-virtualenv.py
 include buildout.cfg
+include netpgp_build.py
 exclude new-project.sh
 include requirements.in
 include requirements.txt
@@ -36,6 +38,8 @@ recursive-exclude docs/locale *.mo
 recursive-include docs/static *.css
 recursive-include notebooks *.rst
 recursive-include notebooks *.ipynb
+graft src/netpgp
+prune src/netpgp/.git
 prune docs/build
 prune notebooks/.ipynb_checkpoints
 prune tests

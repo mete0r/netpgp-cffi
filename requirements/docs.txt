@@ -5,8 +5,10 @@
 #    pip-compile --output-file requirements/docs.txt requirements/docs.in requirements.in
 #
 alabaster==0.7.11
+attr==0.3.1
 babel==2.6.0              # via sphinx, sphinx-intl
 certifi==2018.8.24        # via requests
+cffi==1.11.5
 chardet==3.0.4            # via requests
 click==6.7                # via sphinx-intl
 docutils==0.14            # via sphinx
@@ -15,6 +17,7 @@ imagesize==1.1.0          # via sphinx
 jinja2==2.10              # via sphinx
 markupsafe==1.0           # via jinja2
 packaging==17.1           # via sphinx
+pycparser==2.19           # via cffi
 pygments==2.2.0           # via sphinx
 pyparsing==2.2.0          # via packaging
 pytz==2018.5              # via babel

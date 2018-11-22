@@ -17,20 +17,29 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 from __future__ import absolute_import
+from __future__ import print_function
 from __future__ import unicode_literals
 
 
-class Recipe:
-
-    def __init__(self, buildout, name, options):
-        pass
-
-    def install(self):
-        return tuple()
-
-    def update(self):
-        return tuple()
+class Error(Exception):
+    pass
 
 
-def uninstall(name, options):
+class InitializeError(Error):
+    pass
+
+
+class KeyGenerationError(Error):
+    pass
+
+
+class EncryptError(Error):
+    pass
+
+
+class DecryptError(Error):
+    pass
+
+
+class SignError(Error):
     pass

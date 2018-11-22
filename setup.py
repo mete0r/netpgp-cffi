@@ -22,6 +22,7 @@ from distutils.command.build import build as _build
 import io
 import os.path
 import re
+import subprocess
 
 
 def setup_dir(f):
@@ -111,7 +112,6 @@ setup_info = {
 
     'packages': [
         'netpgp_cffi',
-        'netpgp_cffi.recipe',
     ],
     # do not use '.'; just omit to specify setup.py directory
     'package_dir': {
@@ -121,10 +121,10 @@ setup_info = {
         'netpgp_cffi': [
             'locale/*/*/*.mo',
         ],
-        # 'netpgp_cffi.tests': [
-        #   'files/*',
-        # ],
     },
+    'cffi_modules': [
+        'netpgp_build.py:ffi',
+    ],
     'install_requires': install_requires,
     'test_suite': '__main__.alltests',
     'tests_require': tests_require,
@@ -139,16 +139,7 @@ setup_info = {
     },
     'entry_points': {
         'console_scripts': [
-            'netpgp-cffi = netpgp_cffi.cli:main',
-        ],
-        'zc.buildout': [
-            'default = netpgp_cffi.recipe:Recipe',
-        ],
-        'zc.buildout.uninstall': [
-            'default = netpgp_cffi.recipe:uninstall',
-        ],
-        'paste.app_factory': [
-            'main = netpgp_cffi.wsgi:app_factory',
+#             'netpgp-cffi = netpgp_cffi.cli:main',
         ],
     },
     'classifiers': [
@@ -170,6 +161,7 @@ setup_info = {
 class build(_build):
     def run(self):
         self.run_command('compile_catalog')
+        subprocess.check_call(['make', 'include/netpgp.h'])
         _build.run(self)
 
 

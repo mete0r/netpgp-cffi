@@ -1,0 +1,3 @@
+[submodule "src/netpgp"]
+	path = src/netpgp
+	url = https://github.com/mete0r/netpgp.git
