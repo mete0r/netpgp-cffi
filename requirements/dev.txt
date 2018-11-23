@@ -53,7 +53,7 @@ monotonic==1.5            # via eventlet
 more-itertools==4.3.0     # via pytest
 nbconvert==5.4.0          # via jupyter, notebook
 nbformat==4.4.0           # via ipywidgets, nbconvert, notebook
-notebook==5.6.0           # via jupyter, widgetsnbextension
+notebook==5.7.2
 packaging==17.1           # via sphinx
 pandocfilters==1.4.2      # via nbconvert
 pathlib2==2.3.2           # via pytest
